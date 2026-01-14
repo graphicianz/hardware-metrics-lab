@@ -1,18 +1,19 @@
 # Hardware Metrics Lab
 
 ## Overview
-Hardware Metrics Lab is a small side project focused on exploring real-time
+Hardware Metrics Lab is a small personal project for exploring real-time
 hardware monitoring in local network environments.
 
-The project looks at how lightweight agents, pull-based metrics collection,
-and time-series dashboards can work together to provide practical operational
-visibility, without relying on cloud services or proprietary platforms.
+The goal is to better understand how lightweight agents, pull-based metrics
+collection, and time-series dashboards fit together to provide practical
+visibility into system behavior, without depending on cloud services or
+vendor-specific solutions.
 
 ## Problem
-In many studio, lab, and on-prem environments, machines operate entirely within
-a LAN and may not have direct internet access. Even so, there is still a need
-to understand system health, resource usage, and performance trends across
-multiple machines in near real time.
+In many studio, lab, and on-prem setups, machines operate entirely inside
+a local network and often have limited or no internet access. Despite this,
+there is still a need to observe system health, resource usage, and performance
+patterns across multiple machines in near real time.
 
 ## High-Level Architecture
 
@@ -24,18 +25,19 @@ for visualization and analysis.
 
 ## Design Principles
 
-- Agent-based architecture (one agent per machine)
+- One lightweight agent per machine
 - Pull-based metrics collection
-- LAN-friendly and firewall-safe by design
-- Windows-first environment considerations
-- Keep operational complexity low and transparent
+- LAN-friendly and firewall-safe by default
+- Designed with Windows-first environments in mind
+- Keep the system simple, explicit, and easy to reason about
 
 ## Non-Goals
 
-- Building a full-featured monitoring product
-- Cloud-hosted or SaaS-based monitoring
-- Tight coupling to any specific vendor or platform
+- Building a complete monitoring product
+- Replacing existing enterprise observability platforms
+- Strong coupling to any single vendor or ecosystem
 
 ## Status
 This repository is intended as a learning and experimentation space.
-The focus is on clarity and correctness rather than completeness or scale.
+The focus is on correctness, clarity, and understanding the system behavior,
+rather than completeness or production scale.
