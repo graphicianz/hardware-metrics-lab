@@ -37,7 +37,52 @@ for visualization and analysis.
 - Replacing existing enterprise observability platforms
 - Strong coupling to any single vendor or ecosystem
 
+## Tooling & Dependencies
+
+This project uses a small set of well-established tools and libraries.
+Nothing custom or proprietary is required.
+
+### Runtime
+- **Python 3.9+**  
+  Used for the node agent implementation.  
+  https://www.python.org/
+
+### Metrics Collection
+- **Prometheus**  
+  Used as the central metrics collector (pull-based scraping).  
+  https://prometheus.io/
+
+- **prometheus-client (Python)**  
+  Exposes metrics in Prometheus format over HTTP.  
+  https://github.com/prometheus/client_python
+
+### System Metrics
+- **psutil**  
+  Cross-platform system and process metrics (CPU, memory).  
+  https://github.com/giampaolo/psutil
+
+### GPU Metrics
+- **nvidia-ml-py (NVML bindings)**  
+  Accesses NVIDIA GPU telemetry (temperature, utilization, memory, power).  
+  https://github.com/nicolargo/nvidia-ml-py
+
+> Note: GPU metrics require an NVIDIA GPU with a compatible driver installed.
+
+### Visualization
+- **Grafana / Grafana Cloud**  
+  Used for dashboarding and visualization of collected metrics.  
+  https://grafana.com/
+
+## Validation
+
+Collected metrics were validated using real workloads (e.g. Cinebench)
+to confirm that observed CPU and GPU behavior reflects actual system load,
+rather than synthetic or sampled data artifacts.
+
+Short visual references (screenshots or GIFs) are provided in the `docs/`
+directory for context.
+
 ## Status
 This repository is intended as a learning and experimentation space.
-The focus is on correctness, clarity, and understanding the system behavior,
+The focus is on correctness, clarity, and understanding system behavior,
 rather than completeness or production scale.
