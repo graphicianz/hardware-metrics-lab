@@ -1,0 +1,3 @@
+prometheus-client
+psutil
+nvidia-ml-py

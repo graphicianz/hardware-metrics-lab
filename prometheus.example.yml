@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: "hardware_metrics_lab"
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - "localhost:8000"
+          - "client-a:8000"
+          - "client-b:8000"
+
+remote_write:
+  - url: https://prometheus-prod-XX.grafana.net/api/prom/push
+    basic_auth:
+      username: YOUR_USERNAME
+      password: YOUR_API_KEY
