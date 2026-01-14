@@ -206,13 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Python
-__pycache__/
-*.pyc
-.env
-.venv/
-env/
-
 # IDE
 .idea/
 .vscode/
